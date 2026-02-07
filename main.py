@@ -19,6 +19,8 @@ def main():
 
     while True:
         log_state()
+        
+
         for event in pygame.event.get():
             if event.type == pygame.quit:
                 return
@@ -26,6 +28,7 @@ def main():
         screen.fill("black")
 
         player.draw(screen) #must be between filling screen and flipping screen
+        player.update(dt)
 
         pygame.display.flip()
 

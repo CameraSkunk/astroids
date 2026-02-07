@@ -1,5 +1,10 @@
+#Screen Constants
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 
+#Player Constants
 PLAYER_RADIUS = 20
+PLAYER_TURN_SPEED = 300
+
+# Universal Use Constants
 LINE_WIDTH = 2
