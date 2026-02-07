@@ -28,7 +28,7 @@ def main():
         screen.fill("black")
 
         player.draw(screen) #must be between filling screen and flipping screen
-        player.update(dt)
+        player.update(dt) #controls left/right movement
 
         pygame.display.flip()
 
