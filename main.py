@@ -50,11 +50,20 @@ def main():
         #Runs all update methods for all in updatable group
         updatable.update(dt)
 
+        #Game loss event, ship collides with astroid
         for ast in asteroids:
             if player.collides_with(ast) == True:
                 log_event("player_hit")
                 print("Game over!")
                 sys.exit()
+        
+        #shot controll, shot collides with astroid kill
+        for ast in asteroids:
+            for sht in shots:
+                if sht.collides_with(ast) == True:
+                    log_event("asteroid_shot")
+                    pygame.sprite.Sprite.kill(sht)
+                    ast.split()
 
         pygame.display.flip()
 
