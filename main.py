@@ -1,4 +1,5 @@
 import pygame
+import sys
 from constants import *
 from logger import *
 from player import *
@@ -44,7 +45,13 @@ def main():
             obj.draw(screen)
         
         #Runs all update methods for all in updatable group
-        updatable.update(dt) 
+        updatable.update(dt)
+
+        for ast in asteroids:
+            if player.collides_with(ast) == True:
+                log_event("player_hit")
+                print("Game over!")
+                sys.exit()
 
         pygame.display.flip()
 
